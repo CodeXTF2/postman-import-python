@@ -5,7 +5,7 @@ A python library that allows importing of Postman 2.1 JSON collections into read
 ## Work in progress, still in development
 Currently working on adding more auth types
 
-Usage Guide
+### Usage Guide
 
 The `ParsePostmanJSON` function, defined in **`postman_parser.py`**, transforms a Postman v2.1 collection (in JSON form) into a list of ready to use request objects.
 
