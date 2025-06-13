@@ -7,7 +7,7 @@ Currently working on adding more auth types
 
 ### Usage Guide
 
-The `ParsePostmanJSON` function, defined in **`postman_parser.py`**, transforms a Postman v2.1 collection (in JSON form) into a list of ready to use request objects.
+The `ParsePostmanJSON` function, defined in **`postman_parser.py`**, transforms a Postman v2.1 collection (in JSON form) into a list of ready to use request objects. Supports variables and hopefully more auth types than existing libraries/plugins.
 
 An example program that takes in a Postman 2.1 JSON collection ```-c``` and sends all requests is provided in postman_example.py
 
@@ -32,7 +32,7 @@ entries = ParsePostmanJSON(collection_json: dict) -> List[dict]
   * `request` (`dict`): A spec suitable for `requests.request(**spec)`, containing:
 
     * `method` (`str`): HTTP method in **lowercase**.
-    * `url` (`str`): The raw URL (with `{{vars}}` substituted).
+    * `url` (`str`): The raw URL.
     * `headers` (`dict`): Any HTTP headers (including Authorization).
     * `params` (`dict`): URL query parameters.
     * Optional `auth`: An **`HTTPBasicAuth`**, `HTTPDigestAuth`, `OAuth1`, etc.
