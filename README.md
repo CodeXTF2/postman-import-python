@@ -3,6 +3,7 @@ A python library that allows importing of Postman 2.1 JSON collections into read
 
 
 ## Work in progress, still in development
+Currently working on adding more auth types
 
 Usage Guide
 
