@@ -2,8 +2,13 @@
 A python library that allows importing of Postman 2.1 JSON collections into ready to use requests objects
 
 
-## Work in progress, still in development
-Currently working on adding more auth types
+## Work in progress, still in early development
+**This is still in very early development, and specs are subject to change at any time. If you want to use it for something quick go ahead, but I would not advise usage of this library (in its current state) in any application intended for long term usage.**
+
+TODO:
+- add the remaining auth types
+- test for different data types (binary???)
+
 
 ### Usage Guide
 
