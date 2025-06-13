@@ -9,6 +9,7 @@ Usage Guide
 The `ParsePostmanJSON` function, defined in **`postman_parser.py`**, transforms a Postman v2.1 collection (in JSON form) into a list of ready to use request objects.
 
 An example program that takes in a Postman 2.1 JSON collection ```-c``` and sends all requests is provided in postman_example.py
+
 ---
 
 ## Function Signature
