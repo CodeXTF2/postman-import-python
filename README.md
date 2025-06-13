@@ -1,6 +1,9 @@
 # postman-import-python
 A python library that allows importing of Postman 2.1 JSON collections into ready to use requests objects
 
+
+## Work in progress, still in development
+
 Usage Guide
 
 The `ParsePostmanJSON` function, defined in **`postman_parser.py`**, transforms a Postman v2.1 collection (in JSON form) into a list of ready to use request objects.
