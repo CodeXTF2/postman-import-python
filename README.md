@@ -96,4 +96,11 @@ for entry in entries:
 
 This snippet will iterate through every Postman request in your collection, fire it off via `requests`, and print the HTTP status code.
 
-Yes I ChatGPT'ed the docs, deal with it.
+Yes I ChatGPT'ed the docs, deal with it. Nobody likes writing documentation :) 
+
+# Usual obligatory disclaimer
+This project is generally less "offensive" than my other projects, since its more of a QoL utility for API testing more than it is offensive tooling. I'm just throwing this here because it could potentially help someone else. But in the off chance that you cause nuclear war or the total collapse of the global economy using this code, while funny, I am not responsible for (at least not legally). I dont encourage it (but I will laugh)  
+
+Insert usual disclaimer about non malicious educational use here, whatever. I'm not responsible for random strangers on the internet.
+
+
