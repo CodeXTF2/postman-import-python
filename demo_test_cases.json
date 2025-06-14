@@ -1,0 +1,602 @@
+{
+	"info": {
+		"_postman_id": "89ea263d-cf48-4072-a5cb-726e9077f8e8",
+		"name": "Local Auth Demo",
+		"description": "Demonstration of various authentication methods against a local Flask server at http://localhost:5000",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11436308"
+	},
+	"item": [
+		{
+			"name": "Basic Auth",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "{{basicUsername}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{basicPassword}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/basic-auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"basic-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Digest Auth",
+			"request": {
+				"auth": {
+					"type": "digest",
+					"digest": [
+						{
+							"key": "username",
+							"value": "{{digestUsername}}",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "{{digestPassword}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/digest-auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"digest-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Key",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "{{apiKey}}",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api-key",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api-key"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JWT Auth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwtToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/jwt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"jwt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Protected OAuth2",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/protected-oauth2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"protected-oauth2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Protected OAuth1",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "consumerKey",
+							"value": "{{oauth1ClientKey}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "{{oauth1ClientSecret}}",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "{{oauth1ResourceOwnerKey}}",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "{{oauth1ResourceOwnerSecret}}",
+							"type": "string"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/protected-oauth1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"protected-oauth1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hawk Auth",
+			"request": {
+				"auth": {
+					"type": "hawk",
+					"hawk": [
+						{
+							"key": "authId",
+							"value": "{{hawkId}}",
+							"type": "string"
+						},
+						{
+							"key": "authKey",
+							"value": "{{hawkKey}}",
+							"type": "string"
+						},
+						{
+							"key": "algorithm",
+							"value": "sha256",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/hawk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"hawk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NTLM Auth",
+			"request": {
+				"auth": {
+					"type": "ntlm",
+					"ntlm": [
+						{
+							"key": "password",
+							"value": "{{ntlmPassword}}",
+							"type": "string"
+						},
+						{
+							"key": "domain",
+							"value": "{{ntlmDomain}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{ntlmUsername}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/ntlm-auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ntlm-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Akamai EdgeGrid",
+			"request": {
+				"auth": {
+					"type": "edgegrid",
+					"edgegrid": [
+						{
+							"key": "clientToken",
+							"value": "{{edgegridClientToken}}",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "{{edgegridClientSecret}}",
+							"type": "string"
+						},
+						{
+							"key": "accessToken",
+							"value": "{{edgegridAccessToken}}",
+							"type": "string"
+						},
+						{
+							"key": "maxBody",
+							"value": "1024",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/akamai-edgegrid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"akamai-edgegrid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ASAP Auth",
+			"request": {
+				"auth": {
+					"type": "asap",
+					"asap": [
+						{
+							"key": "privateKey",
+							"value": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDpMpPRt9E+0aiG\nUBfvGF3Gbyb8OYsf0mmBATRpN+G9bDFa2Xrr0lzoLzuK+XuPyJQPS7qlnFHIBdT7\nOUvV7t2CAJo2e0W6FyUjVIBO2wuKTHN4NTzUxJwA0pEzExzIU5wuMlpo3R9JRw8h\nXLYaIMLREZ0Gn2OOX0tJ6Vjc7vQJplmlZUcYYD2MKpTBlF8QOHLwkjgaFu3flCK4\n5YJINnezrXya9jNDOrFS4iFgFgb81UnISqiZaYNZw0INgBFdFZSJ4bnHooWl4YyV\ntPoNHlpnc5sNUbY29tmnE72XiOkRX1iuyIgLEaNICbAQFl4B8peYNKCWcOgGmeBt\nevKiWxSPAgMBAAECggEADNLvNhU5uI6nCdvVtRxN69+o8S3o7LMRgjqiuzaLf3M3\ns5tKGzXSTiJqz9WwadPJ8J1lgj36cVmAwOABv54HKGMIF/7ncrhbHnpDJBL/q3dQ\n0kd7NOgq/BCYU4q1hn6ylAfI2QNv+QOjXV5P1Vf/3qdtTzPssaOj7EiczmmFmhIk\n8jcoVQ81a9BynYw/TY8SKYFlufAiYmzNnzw4QcQ4o1Y8s8g+Z8jsjM548MY6V6Ic\nDrcxDUYmOSyicoNrlCjmx7xA2lCIK5vqJvzOqnxCcIrcDpEzH1ZpZskvQciQO2ra\nCzQEGP52c3oHhl5Iiw1PkcZTUV/IGUYSpsJ6GZc8YQKBgQD6k4pnYEEHBSIlYeqm\nDQRKonzezJsxJXKFK7w+ZG1G+11JP5FUb9X5IHsOUgk90rsV0JtZ6jCYEgYIU3VO\nf7QVy04WZH/vi05PziWbgQ0P/teY+PCUdaV6YDZTWi8259B6H7YQgxmyhaV2Db3P\nnQoGc2tUs/gnhD24fVlU3vEDqwKBgQDuPr1te+tTSzuwlOA3CZHwkyhwpf/VjHG8\nhMpm+wztIPPbIjeJ3oWnmDCuht0dayK/s0Na3nHHz+r/QbkRUGs7E5mQKxA5wIAT\nX+1MacOoZfXAD3XA1D7Z73QkatLgMUttVGUys0IjMk3Z8gWq/w8Fs5GHkrIKl4Pw\neUkMkZjOrQKBgQDpOrrwTZ85MYX+1Yza0fLUpTklB7zLmddmLLciO8ea8gx6STi0\nJwQ6xgjD44fGi4anX2u53UktwljrFwNw9VxhjMI6BYEvLbLOhUpr20qVQNbcA5mq\nFXbY2QS3wJGBwXNCuJF1/RDGIa9ImrG5tKnIJ1YXmQu5fFUWi1XCsWAT0QKBgQCu\njSkcXf48OJKy/WCI8moKaMboQbb/Lrbl+CSS7ry5v7rqgldOm8ow0EBanlTCiQwc\nh6qBmRij3KHAAtck6FaoIeQQzHxG09MCXvXtVlATwSAcZzdO4DJsWhQt2lZGC9fH\ncl3yl4ONZf3EAJ5Gejj3ZGjre38WY4w3U6VBoCrkwQKBgQCHza+P2JYuCHp3wiov\nRD87c5ebnP/TY5EvzSE72pd0Rm+Q44NKIPW6QIz3BM72PYC5J9FrsvQre8nReq2f\nPUWUKTOUIP9frkE7a53+O3KDhC9Gu4S73rPohA+uTlI0VbG8Q1JD1iuVkkgdAeX3\nmFqsTHiho4rLlw3CHCzXuLd+ag==\n-----END PRIVATE KEY-----",
+							"type": "string"
+						},
+						{
+							"key": "kid",
+							"value": "{{asap-key-id}}",
+							"type": "string"
+						},
+						{
+							"key": "aud",
+							"value": "asap-service",
+							"type": "string"
+						},
+						{
+							"key": "iss",
+							"value": "asap-client",
+							"type": "string"
+						},
+						{
+							"key": "alg",
+							"value": "RS256",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "{{asapToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/asap-auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"asap-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AWS Signature V4",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "accessKey",
+							"value": "{{awsAccessKey}}",
+							"type": "string"
+						},
+						{
+							"key": "secretKey",
+							"value": "{{awsSecretKey}}",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "{{awsRegion}}",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "{{awsService}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/aws-sigv4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"aws-sigv4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "basicUsername",
+			"value": "user",
+			"type": "string"
+		},
+		{
+			"key": "basicPassword",
+			"value": "pass",
+			"type": "string"
+		},
+		{
+			"key": "digestUsername",
+			"value": "digest_user",
+			"type": "string"
+		},
+		{
+			"key": "digestPassword",
+			"value": "digest_pass",
+			"type": "string"
+		},
+		{
+			"key": "apiKey",
+			"value": "d905a51a522be9246c0b80f370d58fa6",
+			"type": "string"
+		},
+		{
+			"key": "jwtToken",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqd3RfdXNlciIsImlhdCI6MTc0OTgwNDg3MH0.Mo2YrO3iVZWMbh7-lJ3pb_bUsPLKq9Stgnin34ZZM1k",
+			"type": "string"
+		},
+		{
+			"key": "oauth2ClientId",
+			"value": "141c4a1d2ba88252",
+			"type": "string"
+		},
+		{
+			"key": "oauth2ClientSecret",
+			"value": "ba903357c20032d847554d7245202a51",
+			"type": "string"
+		},
+		{
+			"key": "oauth2Token",
+			"value": "707e7140765d5e31764886f56f18d9dd",
+			"type": "string"
+		},
+		{
+			"key": "oauth1ClientKey",
+			"value": "55502f3b8c4e6ab1",
+			"type": "string"
+		},
+		{
+			"key": "oauth1ClientSecret",
+			"value": "7c2c4e4139e7047393dd2a4b2e289f0a",
+			"type": "string"
+		},
+		{
+			"key": "oauth1ResourceOwnerKey",
+			"value": "c5b0fef951efceb8",
+			"type": "string"
+		},
+		{
+			"key": "oauth1ResourceOwnerSecret",
+			"value": "8bf2d923e4b483b44747735f3f44c19f",
+			"type": "string"
+		},
+		{
+			"key": "hawkId",
+			"value": "hawk-id",
+			"type": "string"
+		},
+		{
+			"key": "hawkKey",
+			"value": "cf341f951f7940d17a1a0eec64925b74",
+			"type": "string"
+		},
+		{
+			"key": "ntlmDomain",
+			"value": "DEMO",
+			"type": "string"
+		},
+		{
+			"key": "ntlmUsername",
+			"value": "ntlm_user",
+			"type": "string"
+		},
+		{
+			"key": "ntlmPassword",
+			"value": "a1b2c3d4e5f6a7b8",
+			"type": "string"
+		},
+		{
+			"key": "edgegridClientToken",
+			"value": "c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6",
+			"type": "string"
+		},
+		{
+			"key": "edgegridAccessToken",
+			"value": "d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6",
+			"type": "string"
+		},
+		{
+			"key": "edgegridClientSecret",
+			"value": "e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6",
+			"type": "string"
+		},
+		{
+			"key": "asapToken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "asapIssuer",
+			"value": "asap-client",
+			"type": "string"
+		},
+		{
+			"key": "asapAudience",
+			"value": "asap-service",
+			"type": "string"
+		},
+		{
+			"key": "asapSecret",
+			"value": "f0e1d2c3b4a5968778695a4b3c2d1e0f",
+			"type": "string"
+		},
+		{
+			"key": "awsAccessKey",
+			"value": "ABCDEF1234567890",
+			"type": "string"
+		},
+		{
+			"key": "awsSecretKey",
+			"value": "0123456789abcdef0123456789abcdef",
+			"type": "string"
+		},
+		{
+			"key": "awsRegion",
+			"value": "us-east-1",
+			"type": "string"
+		},
+		{
+			"key": "awsService",
+			"value": "execute-api",
+			"type": "string"
+		},
+		{
+			"key": "asap-key-id",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "ntlm_pass",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

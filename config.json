@@ -1,0 +1,53 @@
+{
+  "basic": {
+    "username": "user",
+    "password": "pass"
+  },
+  "digest": {
+    "username": "digest_user",
+    "password": "digest_pass"
+  },
+  "api_key": "d905a51a522be9246c0b80f370d58fa6",
+  "jwt": {
+    "secret": "96246b4f07948354899ded17f0bec470",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqd3RfdXNlciIsImlhdCI6MTc0OTgwNDg3MH0.Mo2YrO3iVZWMbh7-lJ3pb_bUsPLKq9Stgnin34ZZM1k"
+  },
+  "oauth2": {
+    "client_id": "141c4a1d2ba88252",
+    "client_secret": "ba903357c20032d847554d7245202a51",
+    "token": "707e7140765d5e31764886f56f18d9dd"
+  },
+  "oauth1": {
+    "consumer_key": "55502f3b8c4e6ab1",
+    "token": "c5b0fef951efceb8",
+    "token_secret": "8bf2d923e4b483b44747735f3f44c19f",
+    "signature": "7c2c4e4139e7047393dd2a4b2e289f0a"
+  },
+  "hawk": {
+    "id": "hawk-id",
+    "key": "cf341f951f7940d17a1a0eec64925b74"
+  },
+  "ntlm": {
+    "domain": "DEMO",
+    "username": "ntlm_user",
+    "password": "ntlm_password123"
+  },
+  "edgegrid": {
+    "client_token": "c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6",
+    "access_token": "d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6",
+    "client_secret": "e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6"
+  },
+  "asap": {
+    "issuer": "asap-client",
+    "audience": "asap-service",
+    "public_keys": {
+      "asap-key-1": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6TKT0bfRPtGohlAX7xhd\nxm8m/DmLH9JpgQE0aTfhvWwxWtl669Jc6C87ivl7j8iUD0u6pZxRyAXU+zlL1e7d\nggCaNntFuhclI1SATtsLikxzeDU81MScANKRMxMcyFOcLjJaaN0fSUcPIVy2GiDC\n0RGdBp9jjl9LSelY3O70CaZZpWVHGGA9jCqUwZRfEDhy8JI4Ghbt35QiuOWCSDZ3\ns618mvYzQzqxUuIhYBYG/NVJyEqomWmDWcNCDYARXRWUieG5x6KFpeGMlbT6DR5a\nZ3ObDVG2NvbZpxO9l4jpEV9YrsiICxGjSAmwEBZeAfKXmDSglnDoBpngbXryolsU\njwIDAQAB\n-----END PUBLIC KEY-----"
+    }
+  },
+  "aws": {
+    "access_key": "ABCDEF1234567890",
+    "secret_key": "0123456789abcdef0123456789abcdef",
+    "region": "us-east-1",
+    "service": "execute-api"
+  }
+}
