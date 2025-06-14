@@ -12,16 +12,21 @@ TODO:
 
 ### Usage Guide
 
-The `ParsePostmanJSON` function, defined in **`postman_parser.py`**, transforms a Postman v2.1 collection (in JSON form) into a list of ready to use request objects. Supports variables and hopefully more auth types than existing libraries/plugins.
+The `ParsePostmanJSON` function transforms a Postman v2.1 collection (in JSON form) into a list of ready to use request objects. Supports variables and multiple authentication types including Basic Auth, Digest Auth, Bearer Token, API Key, OAuth1, OAuth2, Hawk, NTLM, EdgeGrid, ASAP, and AWS Signature V4.
 
+### Installation
 
+```bash
+pip install -r requirements.txt
+```
 
 ### Testing instructions
 - An example program that takes in a Postman 2.1 JSON collection ```-c``` and sends all requests is provided in postman_example.py  
 - A demo postman collection is provided in ```demo_test_cases.json``` that demonstrates a basic implementation of all the auth types currently supported.  
 - An example webapp to handle the example postman collection is provided in ```demo_webapp.py```.  
 - config.json just contains the vars for the webapp. No modification needed.  
-```
+
+```bash
 python demo_webapp.py
 python postman_example.py -c .\demo_test_cases.json
 ```
@@ -95,11 +100,13 @@ Request spec: {
 ## Example: Executing All Requests
 
 ```python
+import json
 import requests
 from postman_parser import ParsePostmanJSON
 
 # load & parse
-collection = json.load(open('my_collection.json'))
+with open('my_collection.json', 'r', encoding='utf-8') as f:
+    collection = json.load(f)
 entries = ParsePostmanJSON(collection)
 
 # send each request
@@ -111,7 +118,20 @@ for entry in entries:
 
 This snippet will iterate through every Postman request in your collection, fire it off via `requests`, and print the HTTP status code.
 
-Yes I ChatGPT'ed the docs, deal with it. Nobody likes writing documentation :) 
+## Supported Authentication Types
+
+The library supports the following authentication types:
+- Basic Auth
+- Digest Auth
+- Bearer Token
+- API Key (header, query, or cookie)
+- OAuth1
+- OAuth2
+- Hawk
+- NTLM
+- EdgeGrid
+- ASAP
+- AWS Signature V4
 
 # Usual obligatory disclaimer
 This project is generally less "offensive" than my other projects, since its more of a QoL utility for API testing more than it is offensive tooling. I'm just throwing this here because it could potentially help someone else. But in the off chance that you cause nuclear war or the total collapse of the global economy using this code, while funny, I am not responsible for (at least not legally). I dont encourage it (but I will laugh)  
