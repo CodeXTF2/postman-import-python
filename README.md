@@ -15,6 +15,15 @@ TODO:
 The `ParsePostmanJSON` function, defined in **`postman_parser.py`**, transforms a Postman v2.1 collection (in JSON form) into a list of ready to use request objects. Supports variables and hopefully more auth types than existing libraries/plugins.
 
 An example program that takes in a Postman 2.1 JSON collection ```-c``` and sends all requests is provided in postman_example.py
+A demo postman collection is provided in ```demo_test_cases.json``` that demonstrates a basic implementation of all the auth types currently supported.
+An example webapp to handle the example postman collection is provided in ```demo_webapp.py```.
+config.json just contains the vars for the webapp. No modification needed.
+
+### Testing instructions
+```
+python demo_webapp.py
+python postman_example.py -c .\demo_test_cases.json
+```
 
 ---
 
